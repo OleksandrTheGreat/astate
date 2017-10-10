@@ -1,4 +1,4 @@
-import { AStateService } from './';
+import { AStateService } from './AStateService';
 
 describe("AStateService", () => {
 
