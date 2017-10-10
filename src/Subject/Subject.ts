@@ -40,7 +40,7 @@ export class Subject<T> {
     this._value = value;
 
     for (i = 0; i < len; i++)
-      setTimeout(this._observers[i].handler(value), timeout);
+      setTimeout(() => this._observers[i].handler(value), timeout);
   }
 
   unsubscribe(subscription: string): void {

@@ -30,8 +30,8 @@ describe('Subject', () => {
 
     let
       subject = new Subject<number>(),
-      actual1 = 0,
-      actual2 = 0,
+      actual1:number,
+      actual2:number,
       expected = 1;
 
     let
@@ -39,15 +39,18 @@ describe('Subject', () => {
         actual1 = value;
       }),
       subscription2 = subject.subscribe((value) => {
-        actual1 = value;
+        actual2 = value;
       });
 
     subject.publishAsync(expected);
 
+    expect(actual1).toBeUndefined();
+    expect(actual2).toBeUndefined();
+
     setTimeout(function () {
       expect(actual1).toEqual(expected);
       expect(actual2).toEqual(expected);
-    }, 100);
+    }, 300);
   });
 
   it('should unsubscribe', () => {
