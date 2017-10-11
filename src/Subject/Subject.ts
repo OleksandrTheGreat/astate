@@ -31,7 +31,7 @@ export class Subject<T> {
       this._observers[i].handler(value);
   }
 
-  publishAsync(value: T, timeout: number = 100): void {
+  publishAsync(value: T, timeout: number = 10): void {
 
     let
       len = this._observers.length,
@@ -39,8 +39,10 @@ export class Subject<T> {
 
     this._value = value;
 
-    for (i = 0; i < len; i++)
-      setTimeout(() => this._observers[i].handler(value), timeout);
+    for (i = 0; i < len; i++){
+      let handler = this._observers[i].handler;
+      setTimeout(() => handler(value), timeout);
+    }
   }
 
   unsubscribe(subscription: string): void {
