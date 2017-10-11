@@ -39,7 +39,7 @@ export class Subject<T> {
 
     this._value = value;
 
-    for (i = 0; i < len; i++){
+    for (i = 0; i < len; i++) {
       let handler = this._observers[i].handler;
       setTimeout(() => handler(value), timeout);
     }
