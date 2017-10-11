@@ -17,7 +17,7 @@ export class AStateService {
     if (!this._state.hasOwnProperty(name)) 
       this._state[name] = new Subject<T>();
 
-    return this._state[name];
+    return this._state[name] as Subject<T>;
   }
 
   getValue<T>(name: string): T {
