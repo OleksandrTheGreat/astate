@@ -1,11 +1,11 @@
-import { AStateService } from './AStateService';
+import { StateService } from './StateService';
 
 describe("AStateService", () => {
 
-    let service: AStateService;
+    let service: StateService;
 
     beforeEach(()=>{
-        service = new AStateService();
+        service = new StateService();
     });
 
     it("should store state", () => {

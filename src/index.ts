@@ -1,9 +1,9 @@
 import { Guid } from './Tools/Guid';
 import { Subject } from './Subject/Subject';
-import { AStateService } from './AStateService/AStateService';
+import { StateService } from './StateService/StateService';
 
 export {
   Guid,
   Subject,
-  AStateService
+  StateService
 }

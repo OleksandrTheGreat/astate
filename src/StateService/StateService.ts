@@ -1,6 +1,6 @@
 import { Subject } from '../Subject/Subject';
 
-export class AStateService {
+export class StateService {
 
   private _state: object = {};
 
